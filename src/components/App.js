@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 // dummy
 const PageOne = () => {
-    return <div>PageOne</div>;
+    return (<div>
+        PageOne
+        <Link to="/two">To Page2</Link>
+        </div>);
 };
 
 const PageTwo = () => {
-    return <div>PageTwo</div>;
+    return (<div>
+        PageTwo
+        <Link to="/">To Page1</Link>
+        </div>);
 };
 
 class App extends Component {
@@ -17,7 +23,7 @@ class App extends Component {
                 <BrowserRouter>
                     <div>
                         <Route path="/" exact component={PageOne} />
-                        <Route path="/two" exact component={PageTwo} />
+                        <Route path="/two" component={PageTwo} />
                     </div>
                 </BrowserRouter>
             </div>
