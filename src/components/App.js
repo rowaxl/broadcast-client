@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './Header';
 import StreamList from "./streams/StreamList";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
@@ -10,6 +11,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <BrowserRouter>
                     <div>
                         <Route path="/" exact component={StreamList} />
