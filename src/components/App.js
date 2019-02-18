@@ -10,10 +10,10 @@ import StreamDelete from "./streams/StreamDelete";
 class App extends Component {
     render() {
         return (
-            <div>
-                <Header />
+            <div className="ui container">
                 <BrowserRouter>
                     <div>
+                        <Header />
                         <Route path="/" exact component={StreamList} />
                         <Route path="/streams/new" exact component={StreamCreate} />
                         <Route path="/streams/show" exact component={StreamShow} />
