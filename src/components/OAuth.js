@@ -21,11 +21,15 @@ class OAuth extends Component {
     }
 
     renderAuthButton() {
-        if (!this.state.isSignedIn) {
-            return <div>SignIn</div>
-        } else {
-            return <div>SignOut</div>
-        }
+        return this.state.isSignedIn ?
+            <button className="ui red google button">
+                <i className="google icon" />
+                SignOut
+            </button> :
+            <button className="ui blue google button">
+                <i className="google icon" />
+                SignIn
+            </button> 
     }
 
     render() {
