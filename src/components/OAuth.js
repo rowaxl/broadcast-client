@@ -22,7 +22,6 @@ class OAuth extends Component {
         } else {
             this.props.signOut();
         }
-        // this.setState({ isSignedIn: this.auth.isSignedIn.get() });
     }
 
     onSignInClick = () => {
@@ -57,5 +56,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(
-    null, {signIn, signOut}
+    mapStateToProps, {signIn, signOut}
 )(OAuth);
