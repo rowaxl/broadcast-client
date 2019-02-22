@@ -10,7 +10,7 @@ class OAuth extends Component {
                 scope: 'email'
             }).then(() => {
                 this.auth = window.gapi.auth2.getAuthInstance();
-                this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+                this.onOauthChange(this.auth.isSignedIn.get());
                 this.auth.isSignedIn.listen(this.onOauthChange);
             });
         });
@@ -18,7 +18,7 @@ class OAuth extends Component {
 
     onOauthChange = isSignedIn => {
         if (isSignedIn) {
-            this.props.signIn();
+            this.props.signIn(this.auth.currentUser.get().getId());
         } else {
             this.props.signOut();
         }
@@ -34,7 +34,7 @@ class OAuth extends Component {
     }
 
     renderAuthButton() {
-        return this.state.isSignedIn ?
+        return this.props.isSignedIn ?
             <button className="ui red google button" onClick={this.onSignOutClick}>
                 <i className="google icon" />
                 SignOut
@@ -53,10 +53,9 @@ class OAuth extends Component {
 };
 
 const mapStateToProps = state => {
-    // state = { isSignedIn: false };
-    return state;
+    return { isSignedIn: state.auth.isSignedIn };
 }
 
 export default connect(
-    mapStateToProps, {signIn, signOut}
+    null, {signIn, signOut}
 )(OAuth);
