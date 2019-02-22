@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn, signOut } from '../actions';
 
 class OAuth extends Component {
-    state = { isSignedIn: false };
-
     componentDidMount() {
         window.gapi.load('client:auth2', () => {
             window.gapi.client.init({
@@ -16,8 +16,13 @@ class OAuth extends Component {
         });
     }
 
-    onOauthChange = () => {
-        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+    onOauthChange = isSignedIn => {
+        if (isSignedIn) {
+            this.props.signIn();
+        } else {
+            this.props.signOut();
+        }
+        // this.setState({ isSignedIn: this.auth.isSignedIn.get() });
     }
 
     onSignInClick = () => {
@@ -47,4 +52,11 @@ class OAuth extends Component {
     }
 };
 
-export default OAuth;
+const mapStateToProps = state => {
+    // state = { isSignedIn: false };
+    return state;
+}
+
+export default connect(
+    mapStateToProps, {signIn, signOut}
+)(OAuth);
