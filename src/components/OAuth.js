@@ -33,15 +33,23 @@ class OAuth extends Component {
     }
 
     renderAuthButton() {
-        return this.props.isSignedIn ?
-            <button className="ui red google button" onClick={this.onSignOutClick}>
-                <i className="google icon" />
-                SignOut
-            </button> :
-            <button className="ui blue google button" onClick={this.onSignInClick}>
-                <i className="google icon" />
-                SignIn
-            </button> 
+        if (this.props.isSignedIn === null) {
+            return null
+        } else if (this.props.isSignedIn === true) {
+            return (
+                <button className="ui red google button" onClick={this.onSignOutClick}>
+                    <i className="google icon" />
+                    SignOut
+                </button>
+            );
+        } else {
+            return (
+                <button className="ui blue google button" onClick={this.onSignInClick}>
+                    <i className="google icon" />
+                    SignIn
+                </button>
+            );
+        }
     }
 
     render() {
