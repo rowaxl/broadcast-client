@@ -79,6 +79,7 @@ function getClientEnvironment(publicUrl) {
         PUBLIC_URL: publicUrl,
 
         CLIENT_ID: process.env.CLIENT_ID,
+        BASE_URL: process.env.BASE_URL,
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
