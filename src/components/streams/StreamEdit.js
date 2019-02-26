@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 class StreamEdit extends Component {
     render() {
-        return (<div>StreamEdit</div>);
+        console.log(this.props);
+        return (
+            <div>StreamEdit:{this.props.match.params.id}</div>
+        );
     }
 };
 
