@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchStreams } from '../../actions';
 
 class StreamList extends Component {
@@ -17,6 +18,18 @@ class StreamList extends Component {
                     <button className="ui button negative">
                         DELETE
                     </button>
+                </div>
+            );
+        }
+    }
+
+    renderCreate = () => {
+        if (this.props.currentUserId) {
+            return (
+                <div style={{ textAlign: 'right' }}>
+                    <Link to="/streams/new" className="ui button primary">
+                        CREATE NEW STREAM
+                    </Link>
                 </div>
             );
         }
@@ -46,6 +59,7 @@ class StreamList extends Component {
                     StreamList
                 </h2>
                 <div className="ui celled list">{this.renderList()}</div>
+                {this.renderCreate()}
             </div>
         );
     }
