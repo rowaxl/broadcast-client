@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class StreamEdit extends Component {
     render() {
@@ -9,4 +10,8 @@ class StreamEdit extends Component {
     }
 };
 
-export default StreamEdit;
+const mapStateToProps = (state, ownProps) => {
+    return { stream: state.streams[ownProps.match.params.id] };
+}
+
+export default connect(mapStateToProps)(StreamEdit);
