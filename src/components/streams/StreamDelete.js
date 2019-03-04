@@ -6,7 +6,14 @@ import history from '../../history';
 
 class StreamDelete extends Component {
     componentDidMount = () => {
-        this.props.fetchStream(this.props.stream.id);
+        this.props.fetchStream(this.props.match.params.id);
+    }
+
+    deleteStream = () => {
+        if (this.props.stream) {
+            this.props.deleteStream(this.props.stream.id);
+            history.push('/');
+        }
     }
 
     renderActions = () => {
@@ -14,6 +21,7 @@ class StreamDelete extends Component {
             <React.Fragment>
                 <button
                     className="ui negative button"
+                    onClick={this.deleteStream}
                 >
                     Delete
                 </button>
@@ -22,13 +30,13 @@ class StreamDelete extends Component {
                     className="ui button"
                 >
                     Cancel
-                    </button>
+                </button>
             </React.Fragment>
         );
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div>
                 <Modal
