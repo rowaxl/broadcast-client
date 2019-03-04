@@ -1,26 +1,16 @@
 {
-  "streams": [
-    {
-      "title": "asdf",
-      "description": "fda",
-      "id": 1
-    },
-    {
-      "title": "title2000",
-      "description": "description23",
-      "userId": "100321944776367049425",
-      "id": 3
-    },
-    {
-      "title": "This is title",
-      "description": "After Submit, list will be shown",
-      "id": 4
-    },
-    {
-      "title": "title56789",
-      "description": "543210",
-      "userId": "100321944776367049425",
-      "id": 5
-    }
-  ]
+    "streams": [
+        {
+            "title": "asdf",
+            "description": "adsfasdfasdf",
+            "userId": "100321944776367049425",
+            "id": 5
+        },
+        {
+            "title": "fdasa",
+            "description": "asdfasdfsa",
+            "userId": "100321944776367049425",
+            "id": 6
+        }
+    ]
 }
