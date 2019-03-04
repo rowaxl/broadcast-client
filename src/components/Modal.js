@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import history from '../history';
 
 class Modal extends Component {
     render() {
         return createPortal(
             <div
-                onClick={() => history.push('/')}
+                onClick={this.props.onDismiss}
                 className="ui dimmer modals visible active"
             >
                 <div

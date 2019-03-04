@@ -5,10 +5,18 @@ import { fetchStream, deleteStream } from '../../actions';
 import history from '../../history';
 
 class StreamDelete extends Component {
+    componentDidMount = () => {
+        this.props.fetchStream(this.props.stream.id);
+    }
+
     renderActions = () => {
         return (
             <React.Fragment>
-                <button className="ui negative button">Delete</button>
+                <button
+                    className="ui negative button"
+                >
+                    Delete
+                </button>
                 <button
                     onClick={() => history.push('/')}
                     className="ui button"
@@ -18,6 +26,7 @@ class StreamDelete extends Component {
             </React.Fragment>
         );
     }
+
     render() {
         console.log(this.props);
         return (
@@ -26,6 +35,7 @@ class StreamDelete extends Component {
                     title="StreamDelete"
                     content="Are you sure want to delete this stream?"
                     actions={this.renderActions()}
+                    onDismiss={() => history.push('/')}
                 />
             </div>
         );
