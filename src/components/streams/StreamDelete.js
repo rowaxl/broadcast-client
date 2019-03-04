@@ -35,13 +35,30 @@ class StreamDelete extends Component {
         );
     }
 
+    renderContents = () => {
+        if (!this.props.stream) {
+            return 'Are you sure you want to delete this stream?'
+        }
+
+        return `Are you sure you want to delete the stream : ${this.props.stream.title}`
+    }
+
     render() {
-        // console.log(this.props);
+        if (!this.props.stream) {
+            return (
+                <div className="ui segment">
+                    <div className="ui active inverted dimmer">
+                        <div className="ui indeterminate text loader">Preparing...</div>
+                    </div>
+                </div>
+            );
+        }
+
         return (
             <div>
                 <Modal
                     title="StreamDelete"
-                    content="Are you sure want to delete this stream?"
+                    content={this.renderContents()}
                     actions={this.renderActions()}
                     onDismiss={() => history.push('/')}
                 />
