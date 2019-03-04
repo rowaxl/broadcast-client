@@ -46,10 +46,8 @@ class StreamDelete extends Component {
     render() {
         if (!this.props.stream) {
             return (
-                <div className="ui segment">
-                    <div className="ui active inverted dimmer">
-                        <div className="ui indeterminate text loader">Preparing...</div>
-                    </div>
+                <div className="ui active inverted dimmer">
+                    <div className="ui indeterminate text loader">Preparing...</div>
                 </div>
             );
         }
