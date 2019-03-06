@@ -8,7 +8,6 @@ class StreamShow extends Component {
     }
 
     render() {
-        console.log(this.props);
         if (!this.props.stream) {
             return (
                 <div className="ui active inverted dimmer">
