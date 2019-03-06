@@ -1762,6 +1762,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+basic-auth-connect@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/basic-auth-connect/-/basic-auth-connect-1.0.0.tgz#fdb0b43962ca7b40456a7c2bb48fe173da2d2122"
+  integrity sha1-/bC0OWLKe0BFanwrtI/hc9otISI=
+
 basic-auth@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
@@ -2903,6 +2908,11 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
+
+dateformat@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
+  integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
 debug@*, debug@^4.0.1, debug@^4.1.0:
   version "4.1.1"
@@ -6592,6 +6602,19 @@ node-libs-browser@^2.0.0:
     url "^0.11.0"
     util "^0.11.0"
     vm-browserify "0.0.4"
+
+node-media-server@^1.4.12:
+  version "1.4.12"
+  resolved "https://registry.yarnpkg.com/node-media-server/-/node-media-server-1.4.12.tgz#1c526d4ecde8276aa3e20be0d75a4d09023c27ed"
+  integrity sha512-rtnj32hzNTjoRtKeJUyXdxdpvahIoOVVkOmz6fDEQfYapcC0oIVNhuBWgVGIjIOTOF41/jD+3COlGNLawfwNOw==
+  dependencies:
+    basic-auth-connect "^1.0.0"
+    chalk "^2.4.2"
+    dateformat "^3.0.3"
+    express "^4.16.4"
+    lodash "^4.17.11"
+    mkdirp "^0.5.1"
+    ws "^5.2.2"
 
 node-notifier@^5.2.1:
   version "5.4.0"
@@ -10393,7 +10416,7 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^5.2.0:
+ws@^5.2.0, ws@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
   integrity sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==
