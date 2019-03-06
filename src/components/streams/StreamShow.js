@@ -19,9 +19,9 @@ class StreamShow extends Component {
         const { title, description } = this.props.stream;
 
         return (
-            <div>
-                <div className="header">{title}</div>
-                <div className="content">{description}</div>
+            <div className="ui container">
+                <h4 className="header"> { title } </h4>
+                <div className="content"> { description } </div>
             </div>
         );
     }
