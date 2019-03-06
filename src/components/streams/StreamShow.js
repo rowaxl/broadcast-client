@@ -1,9 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchStream } from '../../actions';
 
 class StreamShow extends Component {
+    componentDidMount = () => {
+        this.props.fetchStream(this.props.match.params.id);
+    }
+
     render() {
-        return (<div>StreamShow</div>);
+        console.log(this.props);
+        if (!this.props.stream) {
+            return (
+                <div className="ui active inverted dimmer">
+                    <div className="ui indeterminate text loader">Preparing...</div>
+                </div>
+            );
+        }
+        
+        const { title, description } = this.props.stream;
+
+        return (
+            <div>
+                <div className="header">{title}</div>
+                <div className="content">{description}</div>
+            </div>
+        );
     }
 };
 
-export default StreamShow;
+
+const mapStateToProps = (state, ownProps) => {
+    return { stream: state.streams[ownProps.match.params.id] };
+}
+
+
+export default connect(
+    mapStateToProps, { fetchStream }
+)(StreamShow);
