@@ -20,6 +20,10 @@ class StreamShow extends Component {
         this.buildPlayer();
     }
 
+    componentWillUnmount = () => {
+        this.player.destroy();
+    }
+
     buildPlayer = () => {
         if (this.player || !this.props.stream) {
             return;
@@ -50,8 +54,8 @@ class StreamShow extends Component {
         return (
             <div>
                 <video ref={this.videoRef} style={{ width: '100%' }} controls />
-                <h1 className="header"> { title } </h1>
-                <div className="content"> { description } </div>
+                <h1> { title } </h1>
+                <h5> { description } </h5>
             </div>
         );
     }
